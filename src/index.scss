@@ -1,0 +1,125 @@
+@use '../src/scss/variables' as *;
+
+@import-normalize;
+
+@font-face {
+	font-family: 'Syne';
+	src: url('./assets/fonts/Syne-SemiBold.ttf') format('truetype'),
+		url('./assets/fonts/Syne-Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('./assets/fonts/Inter-Light.ttf') format('truetype'),
+		url('./assets/fonts/Inter-Regular.ttf') format('truetype'),
+		url('./assets/fonts/Inter-Medium.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	color: $menthol-high;
+	font-family: 'Syne', 'Inter', sans-serif;
+	background-color: $body-bg;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		background: linear-gradient(
+			45deg,
+			$menthol-high,
+			$purple-animation,
+			$peach-animation
+		);
+		filter: blur(80px);
+		animation: move 6s infinite alternate ease-in-out;
+		border-radius: 50%;
+		z-index: -1;
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		width: 250px;
+		height: 250px;
+		background: linear-gradient(
+			45deg,
+			$menthol-high,
+			$purple-animation,
+			$peach-animation
+		);
+		filter: blur(100px);
+		animation: move-reverse 8s infinite alternate ease-in-out;
+		border-radius: 50%;
+		z-index: -1;
+	}
+	&::before,
+	&::after {
+		will-change: transform, filter;
+	}
+
+	@keyframes move {
+		0% {
+			transform: translate(0, 0);
+		}
+		100% {
+			transform: translate(300px, 400px);
+		}
+	}
+
+	@keyframes move-reverse {
+		0% {
+			bottom: 30%;
+			right: 30%;
+		}
+		100% {
+			bottom: 60%;
+			right: 70%;
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		&::before {
+			animation: none;
+		}
+		&::after {
+			content: none;
+			animation: none;
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $white;
+}
+
+ul {
+	list-style: none;
+}
+
+h1 {
+	font-size: clamp(2rem, 1.3333rem + 3.3333vw, 4rem);
+	text-transform: uppercase;
+}
+
+.container {
+	width: 100%;
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 0 2rem;
+
+	@media (min-width: 320px) and (max-width: 767px) {
+		padding: 0 1rem;
+	}
+}
+
+.label {
+	font-family: 'Syne', sans-serif;
+	color: $white;
+	letter-spacing: 0.02rem;
+}

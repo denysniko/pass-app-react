@@ -1,0 +1,44 @@
+@use '../../scss/variables' as *;
+
+.footer {
+	padding-top: 6.25rem;
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 2rem;
+		color: $grey;
+		font-family: 'Inter', sans-serif;
+		font-size: 0.8rem;
+		font-weight: 400;
+	}
+	&__social {
+		position: relative;
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		line-height: 0;
+		transition: 0.4s ease-in;
+		z-index: 9;
+		&-github {
+			color: $grey;
+			transition: 0.3s ease-in;
+			cursor: pointer;
+			&:hover {
+				color: $menthol-high;
+				transform: translate(0, -0.3rem);
+			}
+		}
+	}
+
+	@media (min-width: 320px) and (max-width: 520px) {
+		&__info {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+			&-copyright {
+				order: 2;
+			}
+		}
+	}
+}
