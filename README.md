@@ -1,3 +1,3 @@
-# Password app React
+# Password generator app in React
 
-My little app that helps generate a password.
+My little app that helps to conveniently generate a password.
