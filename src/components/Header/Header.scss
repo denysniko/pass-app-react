@@ -1,3 +1,5 @@
+@use '../../scss/variables' as *;
+
 .header {
 	&__wrapper {
 		margin-top: 1rem;
@@ -9,5 +11,9 @@
 		align-items: center;
 		font-size: clamp(1rem, 0.8333rem + 0.8333vw, 1.5rem);
 		z-index: 9;
+	}
+	&__logo {
+		color: $white;
+		cursor: pointer;
 	}
 }
