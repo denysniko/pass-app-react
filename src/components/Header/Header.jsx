@@ -5,9 +5,7 @@ export const Header = () => (
 		<div className='container'>
 			<div className='header'>
 				<div className='header__wrapper'>
-					<a href='#' className='heager__logo'>
-						LockifyPass
-					</a>
+					<span className='heager__logo'>LockifyPass</span>
 				</div>
 			</div>
 		</div>
